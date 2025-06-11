@@ -1,0 +1,121 @@
+#logo {
+    width: 20%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+header {
+    background-color: #ebebeb;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*padding: 20px;*/
+    width: 100%;
+    margin: 0 auto;
+    width: 90%;
+}
+
+#catalogo_carros {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #222;
+    width: 90%
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 0 10px;
+    width: 100%;
+    font-size: 0.95em;
+    /* Box por fora dos filtros para efeitos de design */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filters input,
+.filters select,
+.filters button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95em;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    min-width: 60px;     /* para evitar sumir */
+    max-width: 200px;    /* para não crescer demais */
+    flex-shrink: 1 1 auto;  
+}
+
+/* Efeito de borda azul ao clicar nos filtros */
+.filters input:focus,
+.filters select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0,123,255,0.4);
+}
+
+#filter_price_min,
+#filter_price_max {
+    width: 60px;
+    text-align: center;
+}
+
+.filters button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    flex: 0 1 auto;
+}
+
+.filters button:hover {
+    background-color: #0056b3;
+}
+
+#car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+

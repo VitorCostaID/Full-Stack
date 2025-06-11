@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <header class="container">
+        <img id="logo" src="imagens/Logo_Auto_Retrô.png" alt="Logo_Auto_Retrô">
+    </header>
+
+    <main>
+        <h1 class="catalogo_carros">
+            Catálogo de Carros
+        </h1>
+        <div class="filters">
+            <input type="text" id="filter-name" placeholder="Filtrar por nome...">
+            <input type="number" id="filter_price_min" placeholder="Min">
+            <input type="number" id="filter_price_max" placeholder="Max">
+            <select id="sort_date">
+                <option value="">Ordenar por data</option>
+                <option value="newest">Mais novos primeiro</option>
+                <option value="oldest">Mais velhos primeiro</option>
+            </select>
+            <button id="apply_filters">Aplicar Filtros</button>
+        </div>
+        <div id="car-list">
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Catálogo de Carros. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
