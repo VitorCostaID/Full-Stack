@@ -55,7 +55,7 @@ main {
     flex-wrap: nowrap;
     margin-bottom: 30px;
     background-color: #fff;
-    padding: 0 10px;
+    padding: 10px;
     width: 100%;
     font-size: 0.95em;
     /* Box por fora dos filtros para efeitos de design */
@@ -72,8 +72,8 @@ main {
     font-size: 0.95em;
     outline: none;
     transition: all 0.2s ease-in-out;
-    min-width: 60px;     /* para evitar sumir */
-    max-width: 200px;    /* para não crescer demais */
+    min-width: 20%;     /* para evitar sumir */
+    max-width: 100%;    /* para não crescer demais */
     flex-shrink: 1 1 auto;  
 }
 
@@ -86,7 +86,8 @@ main {
 
 #filter_price_min,
 #filter_price_max {
-    width: 60px;
+    width: 50px;
+    min-width: 2%;
     text-align: center;
 }
 
@@ -106,10 +107,29 @@ main {
 
 #car-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+    gap: 2%;
     width: 100%;
-    margin-bottom: 40px;
+    max-width: 1200px; /* largura máxima sensata para o conteúdo */
+    margin: 0 auto 40px auto;
+}
+
+.car-card {
+    padding: 8px 12px;
+    background-color: white;
+    width: 100%;
+    min-width: 10%;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.car-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* força imagem quadrada */
+    object-fit: cover; /* recorta a imagem sem distorcer */
+    border-bottom: 1px solid #eee;
+    display: block;
 }
 
 footer {
