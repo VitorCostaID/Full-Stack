@@ -108,14 +108,15 @@ main {
 #car-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
-    gap: 2%;
+    gap: 3%;
     width: 100%;
     max-width: 1200px; /* largura máxima sensata para o conteúdo */
     margin: 0 auto 40px auto;
 }
 
 .car-card {
-    padding: 8px 12px;
+    font-size: 0.90em;
+    padding: 2% 3%;
     background-color: white;
     width: 100%;
     min-width: 10%;
@@ -130,6 +131,47 @@ main {
     object-fit: cover; /* recorta a imagem sem distorcer */
     border-bottom: 1px solid #eee;
     display: block;
+}
+
+@media (max-width: 768px) {
+  .car-card h2 {
+    font-size: 1.2em;
+  }
+
+  .car-card p {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-card h2 {
+    font-size: 1em;
+  }
+
+  .car-card p {
+    font-size: 0.75em;
+  }
+}
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.paginacao button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.paginacao button.ativo {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
 }
 
 footer {

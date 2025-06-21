@@ -1,3 +1,6 @@
+let paginaAtual = 1;
+const itensPorPagina = 12;
+
 const carros = [
   {
     nome: "Chevrolet Opala 1979",
@@ -40,9 +43,31 @@ function filtrar() {
   renderizarCarros(filtrados);
 }
 
+function renderizarPaginacao(lista) {
+  const paginacao = document.getElementById("paginacao");
+  paginacao.innerHTML = "";
+
+  const totalPaginas = Math.ceil(lista.length / itensPorPagina);
+
+  for (let i = 1; i <= totalPaginas; i++) {
+    const botao = document.createElement("button");
+    botao.textContent = i;
+    botao.classList.toggle("ativo", i === paginaAtual);
+    botao.addEventListener("click", () => {
+      paginaAtual = i;
+      renderizarCarros(lista);
+    });
+    paginacao.appendChild(botao);
+  }
+}
+
 function renderizarCarros(lista) {
   const container = document.getElementById("car-list");
   container.innerHTML = ""; // limpa o conteúdo anterior
+
+  const inicio = (paginaAtual - 1) * itensPorPagina;
+  const fim = inicio + itensPorPagina;
+  const pagina = lista.slice(inicio, fim);
 
   lista.forEach(carro => {
     const card = document.createElement("div");
@@ -57,6 +82,8 @@ function renderizarCarros(lista) {
 
     container.appendChild(card);
   });
+
+  renderizarPaginacao(lista);
 }
 
 // Aplicar filtros quando clicar em filtrar
